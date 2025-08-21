@@ -1,5 +1,5 @@
 # Victory-Vision-AI
-NFL AI Game Prediction Model
+**NFL AI Game Prediction Model**
 
 I built Victory Vision AI to predict weekly NFL game outcomes with a clean, transparent pipeline that is easy to run and easy to understand. This started as a school project, and I used online resources and open-source examples to navigate the AI side while applying my own football background to make sure the features reflect how teams actually play. This repository includes my original baseline and the improved version side by side so anyone can see the evolution, why I made certain changes, and how the final system works end to end.
 
