@@ -109,6 +109,7 @@ Schedule for the forecast horizon; contains home and visitor teams and can inclu
 2. Team Feature Engineering
    
   All features are computed at the team level; they are later differenced at the game level.
+  
   - Scoring and prevention
     - Average points scored and allowed by combining home and away splits.
     - Win rate across home and away.
@@ -137,6 +138,7 @@ Schedule for the forecast horizon; contains home and visitor teams and can inclu
   - Run sanity checks for shape, index alignment, missing values, numeric dtypes, and label distribution.
 
 4. Model Training and Calibration
+   
   The improved model uses calibrated logistic regression with cross-validated tuning and out-of-fold (OOF) threshold selection.
 
   - Clean the training matrix by replacing infinite values, filling missing values, and enforcing numeric dtypes.
@@ -146,7 +148,7 @@ Schedule for the forecast horizon; contains home and visitor teams and can inclu
   - Compute an OOF optimal threshold by sweeping from 0.30 to 0.70 and choosing the value that maximizes accuracy on OOF probabilities.
   - Clamp the display threshold to at least 0.50 for the final table to avoid showing a predicted winner with a displayed probability under 0.50. The OOF optimal threshold is still retained and printed for reference.
 
-Why calibration and OOF thresholding matter:
+  Why calibration and OOF thresholding matter:
  - Calibration improves probability quality compared to raw model outputs.
  - OOF thresholding uses validation folds to find a more robust decision cutoff than a fixed 0.50. The clamp only affects the display.
 
